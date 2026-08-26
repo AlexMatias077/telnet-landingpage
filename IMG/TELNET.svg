@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Circular background with blue (top) and green (bottom) -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f6fb0" />
+      <stop offset="50%" stop-color="#0f6fb0" />
+      <stop offset="51%" stop-color="#49c03a" />
+      <stop offset="100%" stop-color="#49c03a" />
+    </linearGradient>
+    <radialGradient id="gloss" cx="30%" cy="20%" r="70%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6" />
+      <stop offset="60%" stop-color="#ffffff" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+    <filter id="s" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- main circle -->
+  <circle cx="256" cy="256" r="240" fill="url(#bgGrad)" stroke="#0b4f79" stroke-opacity="0.08" stroke-width="2" />
+
+  <!-- white curved path (stylized 'T' / arc) -->
+  <path d="M112 220 C160 120, 352 120, 400 220 L360 250 C320 160, 192 160, 152 250 Z" fill="#ffffff" opacity="0.98" />
+
+  <!-- inner curved cut to create double-curve look -->
+  <path d="M220 220 C260 160, 352 160, 380 220 L344 246 C320 200, 260 200, 232 246 Z" fill="#0f6fb0" />
+
+  <!-- three stripes at bottom-right -->
+  <g transform="translate(300,320)">
+    <rect x="0" y="0" width="110" height="20" rx="3" fill="#ffffff" />
+    <rect x="0" y="30" width="80" height="20" rx="3" fill="#ffffff" opacity="0.96" />
+    <rect x="0" y="60" width="50" height="20" rx="3" fill="#ffffff" opacity="0.94" />
+  </g>
+
+  <!-- gloss highlight -->
+  <circle cx="200" cy="140" r="150" fill="url(#gloss)" />
+
+  <!-- subtle shadow -->
+  <ellipse cx="256" cy="430" rx="160" ry="22" fill="#000" opacity="0.08" />
+</svg>
